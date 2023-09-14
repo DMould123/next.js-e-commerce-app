@@ -9,6 +9,7 @@ export default function ProductPage(props) {
   const { cost, productInfo, name, description } = product
 
   function handleAddToCart() {
+    console.log('PRICE ID: ', price_id)
     const newItem = {
       quantity: 1,
       price_id,
@@ -23,7 +24,7 @@ export default function ProductPage(props) {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1000px] mx-auto">
         <div className="md:p-2">
           <img
-            src={productInfo.images[0]}
+            src={productInfo?.images?.[0]}
             alt={name}
             className="w-full h-full object-cover border border-black"
           />
