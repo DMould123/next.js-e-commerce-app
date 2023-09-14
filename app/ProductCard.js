@@ -1,11 +1,14 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import useCart from './(store)/store'
 
 export default function ProductCard(props) {
   const { product } = props
   const { id: price_id, unit_amount: cost, product: productInfo } = product
   const { name, description } = productInfo
+
+  const setProduct = useCart((state) => state.setProduct)
 
   const router = useRouter()
 
@@ -17,7 +20,7 @@ export default function ProductCard(props) {
       cost,
       productInfo
     }
-    newProduct({ newProduct })
+    setProduct({ newProduct })
     router.push('/product?price_id=' + price_id)
   }
   return (
