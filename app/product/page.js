@@ -32,7 +32,7 @@ export default function ProductPage(props) {
         <div className="flex flex-col gap-2 p-4">
           <div className="flex md:flex-col md:items-start text-xl items-center justify-between gap-2">
             <h3>{name}</h3>
-            <p className="md:text-base">${cost / 100}</p>
+            <p className="md:text-base">{cost / 100}SEK</p>
           </div>
           <p className="text-sm flex-1">{description}</p>
           <button
