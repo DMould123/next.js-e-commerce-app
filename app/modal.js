@@ -44,7 +44,7 @@ export default function Modal() {
         </div>
         <div className="p-4 overflow-scroll flex-1 flex flex-col gap-4">
           {cartItems.length === 0 ? (
-            <p>There is nothing in your cart :'(</p>
+            <p>Your cart is empty!</p>
           ) : (
             <>
               {cartItems.map((cartItem, itemIndex) => {
@@ -55,7 +55,7 @@ export default function Modal() {
                   >
                     <div className="flex items-center justify-between">
                       <h2>{cartItem.name}</h2>
-                      <p>${cartItem.cost / 100}</p>
+                      <p>{cartItem.cost / 100}SEK</p>
                     </div>
                     <p className="text-slate-600 text-sm">Quantity: 1</p>
                   </div>
