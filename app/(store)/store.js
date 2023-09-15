@@ -21,6 +21,14 @@ const useCart = create((set, get) => ({
       }
     })
   },
+  setCart: (newCart) => {
+    set((state) => {
+      return {
+        ...state,
+        cart: newCart
+      }
+    })
+  },
   addItemToCart: (params) => {
     const { newItem } = params
     set((state) => {

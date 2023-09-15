@@ -1,12 +1,14 @@
 'use client'
-import { useRouter } from 'next/navigation'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import ReactDom from 'react-dom'
 import useCart from './(store)/store'
+
 export default function Modal() {
   const closeModal = useCart((state) => state.setOpenModal)
   const cartItems = useCart((state) => state.cart)
-  console.log(cartItems)
+  const setCart = useCart((state) => state.setCart)
+
   const router = useRouter()
 
   async function checkout() {
@@ -27,6 +29,15 @@ export default function Modal() {
     const data = await res.json()
     router.push(data.session.url)
   }
+
+  // Function to remove an item from the cart
+  function removeFromCart(itemIndex) {
+    const updatedCart = [...cartItems]
+    updatedCart.splice(itemIndex, 1)
+    setCart(updatedCart)
+  }
+
+  // ... rest of your code
 
   return ReactDom.createPortal(
     <div className="fixed top-0 left-0 w-screen h-screen z-50">
@@ -55,7 +66,12 @@ export default function Modal() {
                   >
                     <div className="flex items-center justify-between">
                       <h2>{cartItem.name}</h2>
-                      <p>{cartItem.cost / 100}SEK</p>
+                      <div className="cursor-pointer">
+                        <i
+                          className="fas fa-trash-alt text-500"
+                          onClick={() => removeFromCart(itemIndex)}
+                        ></i>
+                      </div>
                     </div>
                     <p className="text-slate-600 text-sm">Quantity: 1</p>
                   </div>
