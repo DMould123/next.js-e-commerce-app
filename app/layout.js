@@ -1,7 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from './header'
-import Footer from './footer'
+import Header from './components/header'
+import Footer from './components/footer'
+import Testimonials from './components/Testimonials'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         <div className="flex-1">{children}</div>
+        <Testimonials />
         <Footer />
         <div id="portal"></div>
       </body>

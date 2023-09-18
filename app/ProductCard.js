@@ -23,22 +23,23 @@ export default function ProductCard(props) {
     setProduct({ newProduct })
     router.push('/product?price_id=' + price_id)
   }
+
   return (
     <div
       onClick={onProductClick}
-      className="flex flex-col shadow bg-white hover:shadow-lg cursor-pointer"
+      className="flex flex-col shadow bg-white hover:shadow-lg cursor-pointer rounded-md"
     >
       <img
         src={productInfo.images[0]}
         alt={name}
-        className="w-full h-full object-cover"
+        className="w-full h-48 object-cover rounded-t-md"
       />
       <div className="flex flex-col gap-2 p-4">
         <div className="flex items-center justify-between">
-          <h3>{name}</h3>
-          <p>{cost / 100}SEK</p>
+          <h3 className="text-lg font-bold">{name}</h3>
         </div>
-        <p className="text-sm">{description}</p>
+        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-lg font-semibold">{cost / 100}SEK</p>
       </div>
     </div>
   )

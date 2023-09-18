@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-import useCart from './(store)/store'
-import Modal from './modal'
+import useCart from '../(store)/store'
+import Modal from '../modal'
 
 export default function Header() {
   const cartItems = useCart((state) => state.cart)
