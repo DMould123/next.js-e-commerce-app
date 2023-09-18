@@ -1,4 +1,7 @@
 'use client'
+import React from 'react'
+import { useRouter } from 'next/navigation' // Import the useRouter hook
+import Testimonials from '../components/Testimonials'
 import useCart from '../(store)/store'
 
 export default function ProductPage(props) {
@@ -7,6 +10,8 @@ export default function ProductPage(props) {
   const product = useCart((state) => state.product)
   const addItemToCart = useCart((state) => state.addItemToCart)
   const { cost, productInfo, name, description } = product
+
+  const router = useRouter() // Get the router object
 
   function handleAddToCart() {
     console.log('PRICE ID: ', price_id)
@@ -18,6 +23,11 @@ export default function ProductPage(props) {
     }
     addItemToCart({ newItem })
   }
+
+  const isHomepage = router.pathname === '/' // Check the current route path
+
+  // Conditionally render the Testimonials component only on the homepage
+  const testimonialsComponent = isHomepage ? <Testimonials /> : null
 
   return (
     <div className="flex flex-col p-4">
@@ -42,6 +52,7 @@ export default function ProductPage(props) {
             Add to Cart
           </button>
         </div>
+        {testimonialsComponent}
       </div>
     </div>
   )
