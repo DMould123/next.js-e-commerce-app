@@ -14,12 +14,7 @@ export default function Header() {
     <header className="sticky top-0 p-6 bg-white border-b border-solid border-blue-900 shadow-md z-50 text-2xl sm:text-3xl md:text-4xl sm:p-8 flex items-center justify-between">
       {openModal && <Modal />}
       <Link href={'/'} passHref>
-        <h1
-          className="uppercase cursor-pointer hover:scale-110"
-          style={{ textDecoration: 'none' }}
-        >
-          DM Tutorial Centre
-        </h1>
+        <img src="/logo.png" alt="Logo" className="w-40 h-auto" />
       </Link>
       <div
         onClick={setOpenModal}

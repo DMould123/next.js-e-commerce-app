@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation' // Import the useRouter hook
 import Testimonials from '../components/Testimonials'
 import useCart from '../(store)/store'
@@ -9,9 +9,33 @@ export default function ProductPage(props) {
   const { price_id } = searchParams
   const product = useCart((state) => state.product)
   const addItemToCart = useCart((state) => state.addItemToCart)
-  const { cost, productInfo, name, description } = product
+  const emptyCart = useCart((state) => state.emptyCart)
+  const { cost, productInfo, name, description } = product || {}
 
-  const router = useRouter() // Get the router object
+  const router = useRouter()
+
+  const [cartEmpty, setCartEmpty] = useState(true)
+
+  console.log(productInfo)
+
+  // Function to handle refresh and clear data
+  const handleRefresh = () => {
+    // Clear data in your store (you may need to define a clearData action in your store)
+    // Example: useCart((state) => state.clearData());
+
+    // Empty the cart
+    emptyCart()
+
+    // Redirect to the homepage
+    router.push('/')
+  }
+
+  // Redirect to the homepage if the product is not available
+  useEffect(() => {
+    if (!product?.name) {
+      router.push('/')
+    }
+  }, [product, router])
 
   function handleAddToCart() {
     console.log('PRICE ID: ', price_id)
@@ -22,22 +46,24 @@ export default function ProductPage(props) {
       cost
     }
     addItemToCart({ newItem })
+    setCartEmpty(false) // Set cartEmpty to false when items are added to the cart
   }
 
-  const isHomepage = router.pathname === '/' // Check the current route path
+  const isHomepage = router.pathname === '/'
 
-  // Conditionally render the Testimonials component only on the homepage
   const testimonialsComponent = isHomepage ? <Testimonials /> : null
 
   return (
     <div className="flex flex-col p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1000px] mx-auto">
         <div className="md:p-2">
-          <img
-            src={productInfo?.images?.[0]}
-            alt={name}
-            className="w-full h-full object-cover border border-black"
-          />
+          {productInfo && productInfo.images && productInfo.images[0] && (
+            <img
+              src={productInfo.images[0]}
+              alt={name}
+              className="w-full h-full object-cover border border-black"
+            />
+          )}
         </div>
         <div className="flex flex-col gap-2 p-4">
           <div className="flex md:flex-col md:items-start text-xl items-center justify-between gap-2">
@@ -51,6 +77,14 @@ export default function ProductPage(props) {
           >
             Add to Cart
           </button>
+          {!cartEmpty && ( // Render the button only if cart is not empty
+            <button
+              onClick={handleRefresh}
+              className="bg-red-500 text-white hover:bg-red-400 cursor-pointer mt-4 mx-auto px-4 py-2"
+            >
+              Refresh and Clear Data
+            </button>
+          )}
         </div>
         {testimonialsComponent}
       </div>
