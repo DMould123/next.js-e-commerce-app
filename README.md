@@ -1,12 +1,12 @@
 # Smart Tuition E-Commerce Store 📚💼
 
-## Description
+## Description 🌍
 
 The Smart Tuition E-Commerce Store is a web application designed to facilitate the booking and sale of tuition services.
 It provides a platform for both students and tutors to connect, explore available tuition options, and schedule sessions.
 This project aims to simplify the process of finding and booking tuition services online.
 
-## Objectives
+## Objectives 🎯
 
 This web application aims to:
 
@@ -18,7 +18,7 @@ This web application aims to:
 - 🔐 Implement secure user authentication and profile management.
 - 📈 Offer scalability for adding more features and services in the future.
 
-## Tech Stack
+## Tech Stack 💻
 
 **Client:**
 Next.js (Front-end framework)
@@ -28,7 +28,7 @@ Stripe (Payment processing)
 Zustand (State management)
 Tailwind CSS (CSS framework)
 
-## Installation
+## Installation 🔧
 
 To run the Smart Tuition E-Commerce Store locally, follow these steps:
 
@@ -64,7 +64,7 @@ To run the Smart Tuition E-Commerce Store locally, follow these steps:
 
 **Note**: You will need an active internet connection to load the necessary CSS and JavaScript files.
 
-## Features
+## Features ✨
 
 Features
 
@@ -72,10 +72,10 @@ Features
 🛒 Add courses to your cart and make secure payments
 📱 Responsive design for optimal viewing on various devices
 
-## License
+## License 📝
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-## Author
+## Author 📚
 
 - David Mould
