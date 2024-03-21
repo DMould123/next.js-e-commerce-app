@@ -1,8 +1,8 @@
-# Smart Tuition E-Commerce Store 📚💼
+# Start Tuition E-Commerce Store 📚💼
 
 ## Description 🌍
 
-The Smart Tuition E-Commerce Store is a web application designed to facilitate the booking and sale of tuition services.
+The Start Tuition E-Commerce Store is a web application designed to facilitate the booking and sale of tuition services.
 It provides a platform for both students and tutors to connect, explore available tuition options, and schedule sessions.
 This project aims to simplify the process of finding and booking tuition services online.
 
@@ -30,7 +30,7 @@ Tailwind CSS (CSS framework)
 
 ## Installation 🔧
 
-To run the Smart Tuition E-Commerce Store locally, follow these steps:
+To run the Start Tuition E-Commerce Store locally, follow these steps:
 
 1. Clone the repository to your local machine:
 
@@ -60,7 +60,7 @@ To run the Smart Tuition E-Commerce Store locally, follow these steps:
    npm run dev
    ```
 
-5. Open your web browser and visit http://localhost:3000 to access the Smart Tution app.
+5. Open your web browser and visit http://localhost:3000 to access the Start Tution app.
 
 **Note**: You will need an active internet connection to load the necessary CSS and JavaScript files.
 
