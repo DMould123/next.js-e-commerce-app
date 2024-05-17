@@ -46,7 +46,7 @@ export default function Testimonials() {
 
   return (
     <div className="my-8">
-      <h2 className="text-2xl font-semibold mb-4">Customer Reviews</h2>
+      <h2 className="text-2xl font-semibold mb-4 px-4">Customer Reviews</h2>
       <div className="relative overflow-x-hidden">
         {rows.map((row, rowIndex) => (
           <div
