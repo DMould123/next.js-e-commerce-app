@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation' // Import the useRouter hook
+import { useRouter } from 'next/navigation'
 import Testimonials from '../components/Testimonials'
 import useCart from '../(store)/store'
 

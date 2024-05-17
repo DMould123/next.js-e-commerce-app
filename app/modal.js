@@ -13,10 +13,9 @@ export default function Modal() {
 
   async function checkout() {
     const lineItems = cartItems.map((cartItem) => {
-      console.log('CART ITEM: ', cartItem)
       return {
         price: cartItem.price_id,
-        quantity: 1
+        quantity: cartItem.quantity
       }
     })
     const res = await fetch('/api/checkout', {
@@ -37,13 +36,12 @@ export default function Modal() {
     setCart(updatedCart)
   }
 
-  // ... rest of your code
-
   return ReactDom.createPortal(
     <div className="fixed top-0 left-0 w-screen h-screen z-50">
-      <div onClick={closeModal} className="bg-transparent absolute  inset-0">
-        {' '}
-      </div>
+      <div
+        onClick={closeModal}
+        className="bg-transparent absolute inset-0"
+      ></div>
       <div className="flex flex-col bg-white absolute right-0 top-0 h-screen shadow-lg w-screen sm:w-96 max-w-screen gap-4">
         <div className="flex items-center p-6 justify-between text-xl relative">
           <h1>Cart</h1>
@@ -57,27 +55,25 @@ export default function Modal() {
           {cartItems.length === 0 ? (
             <p>Your cart is empty!</p>
           ) : (
-            <>
-              {cartItems.map((cartItem, itemIndex) => {
-                return (
-                  <div
-                    key={itemIndex}
-                    className="flex border-l border-solid border-slate-700 px-2 flex-col gap-2"
-                  >
-                    <div className="flex items-center justify-between">
-                      <h2>{cartItem.name}</h2>
-                      <div className="cursor-pointer">
-                        <i
-                          className="fas fa-trash-alt text-500"
-                          onClick={() => removeFromCart(itemIndex)}
-                        ></i>
-                      </div>
-                    </div>
-                    <p className="text-slate-600 text-sm">Quantity: 1</p>
+            cartItems.map((cartItem, itemIndex) => (
+              <div
+                key={itemIndex}
+                className="flex border-l border-solid border-slate-700 px-2 flex-col gap-2"
+              >
+                <div className="flex items-center justify-between">
+                  <h2>{cartItem.name}</h2>
+                  <div className="cursor-pointer">
+                    <i
+                      className="fas fa-trash-alt text-500"
+                      onClick={() => removeFromCart(itemIndex)}
+                    ></i>
                   </div>
-                )
-              })}
-            </>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Quantity: {cartItem.quantity}
+                </p>
+              </div>
+            ))
           )}
         </div>
         <div

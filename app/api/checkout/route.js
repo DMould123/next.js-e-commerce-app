@@ -2,13 +2,10 @@ import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
 export async function POST(request) {
-  // if (request.method !== 'POST') { return res.sendStatus(405) }
   const body = await request.json()
 
   if (request.method !== 'POST') {
-    return new Response('Method Not Allowed', {
-      status: 405
-    })
+    return new Response('Method Not Allowed', { status: 405 })
   }
 
   try {
@@ -24,10 +21,7 @@ export async function POST(request) {
     })
     return NextResponse.json({ session })
   } catch (err) {
-    console.log('BROKED')
-    console.log(err)
-    return new Response('Error', {
-      status: 405
-    })
+    console.log('Error creating Stripe session:', err)
+    return new Response('Error', { status: 405 })
   }
 }

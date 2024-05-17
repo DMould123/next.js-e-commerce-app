@@ -7,7 +7,7 @@ export default function CancelPage() {
       <img
         src="https://media.giphy.com/media/xT5LMYlZh1HfoOtS6Y/giphy.gif"
         alt="Cancelled GIF"
-        className="w-96 h-96 mb-4" // Adjust the width and height here
+        className="w-96 h-96 mb-4"
       />
       <p className="text-lg mb-4">Oops! Your payment was cancelled.</p>
       <Link href={'/'}>
