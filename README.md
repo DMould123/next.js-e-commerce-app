@@ -66,6 +66,11 @@ To run the Start Tuition E-Commerce Store locally, follow these steps:
 
 ## Features ✨
 
+- Improved cart functionality to update item quantities correctly.
+- Enhanced Stripe checkout integration to reflect accurate cart totals.
+
+## Recent Updates 🛠️
+
 - ✨ Browse various tuition courses
 - 🛒 Add courses to your cart and make secure payments
 - 📱 Responsive design for optimal viewing on various devices

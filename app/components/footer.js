@@ -15,7 +15,7 @@ function Footer() {
       <Link href="https://github.com/DMould123" target="_blank">
         <i className="fa-brands fa-github text-slate-700 hover:text-slate-500 cursor-pointer text-2xl sm:text-3xl md:text-4xl"></i>
       </Link>
-      <p className="text-500 text-lg font-bold">© David Mould 2023 ©</p>
+      <p className="text-500 text-lg font-bold">© David Mould 2024 ©</p>
     </footer>
   )
 }
