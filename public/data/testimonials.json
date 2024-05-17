@@ -1,0 +1,46 @@
+[
+  {
+    "category": "english",
+    "testimonials": [
+      {
+        "name": "Bob",
+        "rating": 5,
+        "review": "Great English product! I improved my English skills significantly with this course.",
+        "image": "https://res.cloudinary.com/dele4dvi9/image/upload/v1695037581/avatars/bob_r3jgoi.png"
+      }
+    ]
+  },
+  {
+    "category": "maths",
+    "testimonials": [
+      {
+        "name": "Colin",
+        "rating": 4,
+        "review": "Great Maths service! The tutor was knowledgeable and patient.",
+        "image": "https://res.cloudinary.com/dele4dvi9/image/upload/v1695039025/avatars/colin_dqzq5w.png"
+      }
+    ]
+  },
+  {
+    "category": "science",
+    "testimonials": [
+      {
+        "name": "Maggie",
+        "rating": 5,
+        "review": "Highly recommended Science! The course content was comprehensive, and the instructor was excellent.",
+        "image": "https://res.cloudinary.com/dele4dvi9/image/upload/v1695039505/avatars/fbc0bbaa29d36321c5fc681e04ed0c7b-removebg-preview_egpfvo.png"
+      }
+    ]
+  },
+  {
+    "category": "programming",
+    "testimonials": [
+      {
+        "name": "Sunita",
+        "rating": 5,
+        "review": "Awesome Programming course! The coding projects were challenging and fun to work on.",
+        "image": "https://res.cloudinary.com/dele4dvi9/image/upload/v1695039673/avatars/8fd440a414f6ab5f3767e39e70faee0c-removebg-preview_hkxrrg.png"
+      }
+    ]
+  }
+]
